@@ -15,7 +15,7 @@
 
 # Basic construct of the program
 # Profile:
-#   Infrastructure Route
+#   Infrastructure Router
 #     
 #   Type:
 #       Checks:
@@ -131,16 +131,16 @@ def check(NET_ID, CCE_ID):
         global Failed
         Failed += 1
 
-# def to check if found its a failed.
+# def to check the precense of the command. if found its a failed.
 def check_there(NET_ID, CCE_ID):
     NET_Check = parse.find_lines(CCE_ID ,exactmatch=True)
     if NET_Check == [CCE_ID]:
         print "FAIL: %r" % NET_ID
-        global Failed
+        global Passed
         Passed += 1
     else:
         print "PASS: %r " % NET_ID 
-        global Passed
+        global Failed
         Failed += 1
 
 # def to check the banner settings
