@@ -3,7 +3,7 @@
 #This python program attempt to run a STIG scan aginst ag Cisco IOS config
 #file.  This grew from learning python programing and getting a detailed
 #understanding of the of the DISA Network Infrastructure STIG. 
-#If you don't understand what a STIGs is look at http://c3isecurity.com
+#If you don't understand what a STIGs is look at http://wwww.c3isecurity.com
 #There are many other commercial and opensource tools that can check for
 #and parse the Cisco IOS device.  This is just another experimental 
 #learning platform.  Don't use this for offical audits.  If you do double/triple check for validation.
@@ -34,9 +34,9 @@ from ciscoconfparse import *
 #argv variables. input_file is the config file to parse
 script, input_file = argv
 print "\nIOS-STIG Python STIG checker."
-print "Copyright (c) 2011, C3isecurity."
+print "Copyright (c) 2012, C3isecurity."
 print "All rights reserved."
-print "version 0.03\n"
+print "version 0.04\n"
 
 print "Starting IOS STIG check"
 parse = CiscoConfParse (input_file)
