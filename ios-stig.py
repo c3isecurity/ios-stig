@@ -1,17 +1,18 @@
 #ios-stig.py
 
-#This python program attempt to run a STIG scan aginst ag Cisco IOS config
-#file.  This grew from learning python programing and getting a detailed
-#understanding of the of the DISA Network Infrastructure STIG. 
-#If you don't understand what a STIGs is look at http://wwww.c3isecurity.com
-#There are many other commercial and opensource tools that can check for
-#and parse the Cisco IOS device.  This is just another experimental 
-#learning platform.  Don't use this for offical audits.  If you do double/triple check for validation.
+# This Python program attempts to run a STIG scan against a Cisco IOS config
+# file.  This program evolved out from learning python programing while trying to solve a real world problem.  # The program applies a detailed understanding of the of the DISA Network Infrastructure STIG assessment. 
+# If you don't understand what a STIGs is look at 
+# https://github.com/c3isecurity/ios-stig/wiki
+# http://wwww.c3isecurity.com
+# There are many other commercial and opensource tools that can check for
+# and parse the Cisco IOS device.  This is just another experimental 
+# learning platform.  Don't use this for official audits.  Be sure to double/triple check for validation if you decide to use it.
 
 #----DEPENDANCIES!!!!!!!!!!!!!!!!------------
 # the ciscoconfparse!!!!!!!!!!!!!
 # I am leveraging the great work he has done!  
-
+# http://www.pennington.net/py/ciscoconfparse/
 
 # Basic construct of the program
 # Profile:
