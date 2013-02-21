@@ -1,7 +1,8 @@
 #ios-stig.py
 
-# This Python program attempts to run a STIG scan against a Cisco IOS config
-# file.  This program evolved out from learning python programing while trying to solve a real world problem.  # The program applies a detailed understanding of the of the DISA Network Infrastructure STIG assessment. 
+# This Python program runs a STIG scan against a Cisco IOS config
+# file.  This program evolved from learning python programing while trying to solve a real world problem.  
+#  Detailed understanding of the of the DISA Network Infrastructure STIG assessment is not necessary. 
 # If you don't understand what a STIGs is look at 
 # https://github.com/c3isecurity/ios-stig/wiki
 # http://wwww.c3isecurity.com
@@ -19,12 +20,12 @@
 #   Infrastructure Router
 #     
 #   Type:
-#       Checks:
+#   Checks:
 
-#Require config file for input
+# Require config file for input
 #
-#List STIG NETXXXX checks < The strings listed on the NETXXXX are 
-#my candidates for being in the Cisco IOS CCE.   
+# List STIG NETXXXX checks < The strings listed on the NETXXXX are 
+# my candidates for being in the Cisco IOS CCE.   
 
 
 #IMPORT section
