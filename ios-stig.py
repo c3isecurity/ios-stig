@@ -345,6 +345,7 @@ def L2_switch():
     NAC_checks()
 
 
+
 # Main starting of script
 def start():
     Infra_router()
@@ -352,13 +353,12 @@ def start():
 #    Perimeter_L3_switch()
 #    Infra_L3_switch()
 #    L2_switch()
-    print "--------E-N-D--O-F--S-C-R-I-P-T------------------"
+    print "---------E-N-D--O-F--S-C-R-I-P-T-----------------"
     print "\n Total  PASSED: %r" % Passed
     print " Total  FAILED: %r" % Failed
     print " Total      NA: %r" % NA
     print " Total CHECKED: %r" % (Passed + Failed + NA)
     print "\n\n"
-
 # START of the program
 start()
 
