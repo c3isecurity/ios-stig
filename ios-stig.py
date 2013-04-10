@@ -6,6 +6,13 @@
 # If you don't understand what a STIGs is look at 
 # https://github.com/c3isecurity/ios-stig/wiki
 # http://wwww.c3isecurity.com
+# Purpose:
+#
+# Intent:
+#
+#
+# Usage: python ios-stig.py <configfilename>
+#
 # There are many other commercial and opensource tools that can check for
 # and parse the Cisco IOS device.  This is just another experimental 
 # learning platform.  Don't use this for official audits.  Be sure to double/triple check for validation if you decide to use it.
