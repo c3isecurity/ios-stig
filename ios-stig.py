@@ -6,9 +6,9 @@
 # If you don't understand what a STIGs is look at 
 # https://github.com/c3isecurity/ios-stig/wiki
 # http://wwww.c3isecurity.com
-# Purpose:
+# Purpose: Scan a Cisco IOS configuration files for STIG compliance.
 #
-# Intent:
+# Intent: Check CCE and python.
 #
 #
 # Usage: python ios-stig.py <configfilename>
@@ -44,7 +44,7 @@ from optparse import OptionParser
 #argv variables. input_file is the config file to parse
 
 
-# Print out help.
+# Print out help. Definition currently not beiing used at the moment.
 def parse_options():
 #    prog_version = .04
     usage = "usage: %prog [input_file . . .]"
@@ -387,7 +387,11 @@ def start():
 # START of the program
 def usage():
     print  ("""
+IOS-STIG Checker
 Usage: python ios-stig.py <ios-config.file> 
+Copyright (c) 2013, C3isecurity.
+All rights reserved.
+Version 0.04
 """)
     sys.exit(1)
 
