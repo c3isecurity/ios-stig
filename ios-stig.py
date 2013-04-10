@@ -39,15 +39,16 @@ from optparse import OptionParser
 
 # Print out help.
 def parse_options():
-	    usage = "usage: %prog [options] input_file [input_file . . .]"
-	    parser = OptionParser(usage=usage, version="%prog ")
-	    parser.add_option("-o", dest="out_dname", default="/tmp/checks",
-	                      help="name of output directory. If unspecified, default is a new directory \"/tmp/checks\"")
-	    (options, args) = parser.parse_args()
-	    if len(args) < 1:
-	        parser.print_help()
-	        sys.exit(1)
-	    return (options, args)
+#    prog_version = .04
+    usage = "usage: %prog [input_file . . .]"
+    parser = OptionParser(usage=usage, version="%prog_version ")
+#   parser.add_option("-o", dest="out_dname", default="/tmp/checks",
+	#                      help="name of output directory. If unspecified, default is a new directory \"/tmp/checks\"")
+    (options, args) = parser.parse_args()
+    if len(args) < 1:
+        parser.print_help()
+        sys.exit(1)
+        return (options, args)
 
 
 #Sting Section used to validate Benchmarks and CCE
@@ -377,13 +378,22 @@ def start():
     print "\n\n"
 	
 # START of the program
+def usage():
+    print  ("""
+Usage: python ios-stig.py <ios-config.file> 
+""")
+    sys.exit(1)
 
 def main():
-    (args) = parse_options()
-    for fname in args:
+#    (args) = parse_options()
+#    for fname in args:
+#        start()
+#        sys.exit(0)
+    args = sys.argv[1:]
+    if len(args) == 1:
         start()
-        sys.exit(0)
-    
+    else:
+        usage()
 
 if __name__ == "__main__":
     main()
