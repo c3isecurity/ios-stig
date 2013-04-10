@@ -362,7 +362,7 @@ def start():
 
     print "Starting IOS STIG check"
     global parse
-	parse = CiscoConfParse (input_file)
+    parse = CiscoConfParse (input_file)
     print "opening %r\n" % input_file
     Infra_router()
 #    Perimeter_router()
@@ -377,20 +377,13 @@ def start():
     print "\n\n"
 	
 # START of the program
-start()
-#parse_options()
 
 def main():
-    (options, args) = parse_options()
+    (args) = parse_options()
     for fname in args:
-        tree = ET.parse(fname)
-        ET.dump(tree)
-        gather_ids_for_elements(tree)
-        gather_refs_for_defs(tree)
-        output_checks(options.out_dname)
+        start()
         sys.exit(0)
-    start()
+    
 
-#if __name__ == "__main__":
-#    main()
-#    start()
+if __name__ == "__main__":
+    main()
