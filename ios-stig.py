@@ -58,7 +58,7 @@ def parse_options():
         return (options, args)
 
 
-#Sting Section used to validate Benchmarks and CCE
+#String Section used to validate Benchmarks and CCE
 #Common Configuration Enumeration (CCE)
 #Below are the strings used to parse for checks.  The NET_ IDs are for
 #reference to STIG checks.
@@ -77,6 +77,9 @@ NET_1645 = "ip ssh time-out"
 # VLAN section
 NET_VLAN_004 = "no ip address"
 NET_VLAN_004a = "shutdown"
+
+# General section
+CSCO0010 = "enable secret"
 
 # AAA section
 NET0433 = "aaa new-model" 
@@ -107,9 +110,7 @@ NET0790 = "no ip directed broadcast"
 NET0800 = "no ip redirects"
 NET0800a = "no ip unreachables"
 NET0900 = "snmp-server trap-source Loopback"
-
 NET0781 = "no ip gratuitous-arps"
-
 NET0960 = "ip tcp intercept list"
 NET0965 = "ip tcp synwait-time 10"
 
@@ -169,9 +170,9 @@ def banner_check():
         Passed += 1
         print NET_Check
     elif NET_Check == "banner motd":
-        print "Pass Banner check motd"
+        print "Pass 'Banner check motd'"
     else:
-        print "FAIL: NET0304 Banner check" 
+        print "FAIL: 'NET0304 Banner check'" 
         global Failed
         Failed += 1
 
@@ -234,6 +235,7 @@ def NET_checks():
     check ("NET1647 SSH version 2", NET_1647)
     check ("NET1646 SSH login attempt is set to 3", NET_1646)
     check ("NET1645 SSH time-out setting", NET_1645)
+    check ("CSCO0010 Secret Password setting", CSCO0010)
     check ("NET0433 AAA settings", NET0433)
     check ("NET0433 AAA authentication settings", NET0433a)
     check ("NET0600 Password Encryption setting", NET0600)
@@ -314,7 +316,6 @@ def NAC_checks():
 def Infra_router():
     print "---------------------------------------"
     print "-PROFILE INFRASTRUCTURE ROUTER CHECKS-"
-    
     NET_checks()    
     interface_checks()
     IPV6_checks()
@@ -358,25 +359,23 @@ def L2_switch():
     VLAN_checks()
     NAC_checks()
 
-
-
 # Main starting of script
 def start():
     script, input_file = argv
     print "\nIOS-STIG Python STIG checker."
-    print "Copyright (c) 2012, C3isecurity."
+    print "Copyright (c) 2013, C3isecurity."
     print "All rights reserved."
-    print "version 0.04\n"
+    print "version 0.05\n"
 
     print "Starting IOS STIG check"
     global parse
     parse = CiscoConfParse (input_file)
-    print "opening %r\n" % input_file
+    print "Opening config file: %r\n" % input_file
     Infra_router()
-#    Perimeter_router()
-#    Perimeter_L3_switch()
-#    Infra_L3_switch()
-#    L2_switch()
+    #Perimeter_router()
+    #Perimeter_L3_switch()
+    #Infra_L3_switch()
+    #L2_switch()
     print "---------E-N-D--O-F--S-C-R-I-P-T-----------------"
     print "\n Total  PASSED: %r" % Passed
     print " Total  FAILED: %r" % Failed
@@ -388,10 +387,11 @@ def start():
 def usage():
     print  ("""
 IOS-STIG Checker
-Usage: python ios-stig.py <ios-config.file> 
 Copyright (c) 2013, C3isecurity.
 All rights reserved.
-Version 0.04
+Version 0.05        
+
+        Usage: python ios-stig.py <ios-config.file> 
 """)
     sys.exit(1)
 
